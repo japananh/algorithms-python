@@ -22,18 +22,14 @@ def insertion_sort(arr):
 
 def binary_search(arr, num, low, high):
     if low >= high:
-        return low + 1 if num > arr[low] else low
+        return low + 1 if num >= arr[low] else low
 
     mid = round((low + high) / 2)
 
-    if num == arr[mid]:
-        return mid + 1
-
-    if num > arr[mid]:
+    if num >= arr[mid]:
         return binary_search(arr, num, mid + 1, high)
 
     return binary_search(arr, num, low, mid - 1)
-
 
 '''
     Best-case: O(n)
